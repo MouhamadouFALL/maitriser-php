@@ -230,3 +230,74 @@ if($varA === $varB) { // Comparaison en valeur et en type.
 }
 
 // Pour mémoire : le simple "=" => pour affecter.
+
+//--------
+/* isset () et empty ():
+ - empty () teste si la variable est vide : 0, string vide '', NULL,false, ou non définie
+- isset() teste si la variable existe et est différente de NULL.
+*/
+
+$var1 = 0;
+$var2 = '';
+
+if (empty($var1))echo '$var1 est vide (0, "",NULL, false ou non définie)';
+// comme $var1 contient 0, il est empty
+if (isset($var2)) echo '$var2 existe et est non NULL <br>';
+// comme $var2 est déclaré (et non contient pas NULL)il est isset.
+
+/* Exemple d'utilisation : 
+- empty pour vérifier qu'un champ de formulaire est rempli.
+- isset pour vérifier l'existence d'une varaible avant de l'utiliser.
+*/
+
+/* ------
+L'opérateur NOT qui s'écrit "!" : */
+$var3 = 'quelque chose';
+if (!empty($var3)) echo '$var3 n\'est pas vide <br>'; // "!" pour NOT qui est une négation.Ici cela signifie si $var3 n'est pas vide.
+
+// !TRUE => FALSE
+// !FALSE => TRUE
+
+
+/*  -----------
+- PHP7 : afficher une variable si elle existe avec l'opérateur NULL coalescent qui s'écrit "??" :
+phpinfo(); => pour fournir les valeurs des paramètres serveur. 
+*/
+
+echo $maVar ?? 'valeur par défaut <br>'; // on affiche la variable $maVar SI ELLE EXISTE, sinon on affiche 'valeur par défaut'.
+// On s'en servira pour maintenir les valeurs dans un formulaire.
+
+// -------------------------------
+echo '<h2> switch </h2>';
+// -------------------------------
+// La condition switch est une autre syntaxe pour  écrire un if / elseif /elseif/eslse quand on veut comparer une variable à une multitude de valeurs.
+
+$langue = 'chinois';
+switch ($langue) {
+    case 'français': // on compare $langue à la valeur des "case" et exécute le code qui suit si elle correspond:
+        echo'Bonjour !';
+    break; // obligatoire pour quitter la structure une fois le "case" exécuté.
+
+    case 'italien' : 
+        echo 'Buongiorno !';
+    break;
+    case 'espagnol' : 
+        echo'Hola !';
+    break;
+    default : // cas par défaut si on entre pas dans les "case" précédents.
+        echo 'Hello !';
+    break;
+}
+
+echo '<br>';
+// Exercice : vous réécrivez ce switch en if... pour obtenir les mêmes résultats.
+
+if($langue =='français'){
+    echo 'Bonjour!';
+}elseif ($langue == 'italien') {
+    echo 'Buongiorno !';
+} elseif ($langue == 'espagnol'){
+    echo 'Hola !';
+}else {
+    echo 'Hello !';
+}
