@@ -155,3 +155,78 @@ $a %= $b; //  équivaut à $a = $a % $b soit $a vaut 0 à la fin.
 //incrémenter et décrementer 
 $i = 0;$i++; // incrementation : on ajoute 1 à $i. $i vaut donc 1.
 $i--; // décrementation : on retire 1 a $i. $i vaut donc 1.
+
+//---------------------------------------
+echo "<h2> Les conditions </h2>";
+//---------------------------------------
+$a = 10;
+$b = 5;
+$c = 2;
+
+// if ... else
+if ($a > $b) {// si la condition est évaluée à true, c'est à dire que $a est supérieur à $b, alors on entre dans les accolades qui suivent :
+    echo '$a est bien supérieur $b <br>';
+}
+else { // sinon on exécute le else :
+    echo 'non $b est supérieur à $a <br>';
+}
+
+//-----
+// L'opérateur AND qui s'écrit && :!
+if($a > $b && $b > $c){ // si $a est supérieur à $b et que dans le même temps, $b est supérieur à $c, alors on entre dans les accolades :
+    echo 'Vrai pour les 2 conditions <br>';
+}
+// TRUE && TRUE => TRUE
+// FALSE && FALSE => FALSE
+// TRUE && FALSE => FALSE
+
+//--------
+// L'opérateur OR qui s'écrit || :
+if ($a == 9 || $b > $c){ // Si $a estr égale (==) à 9 ou alors que $b est supérieur à $c, alors on entre dans les accolades :
+    echo 'Vrai pour au moins une des deux conditions <br>';    
+}else{
+    echo'Les deux conditions sont fausses <br>';
+}
+
+//-----------
+// if.... elseif ...else :
+if($a == 8){
+    echo 'Réponse 1 : $a est égal à 8 <br>';
+}elseif($a != 10) {
+    echo 'Réponse 2 : $a est différent de 10 <br>';
+}else {
+    echo 'Réponse 3 : les deux conditions précédentes sont fausses <br>';
+}// pas de ";" à la fin des structures 
+
+/* 
+    TRUE || TRUE => TRUE
+    FALSE || FALSE =>FALSE
+    TRUE || FALSE => TRUE
+    Avec or il faut que l'une des conditions soit vrai.
+*/
+
+//--------
+// Forme contracutée dite "ternaire":
+// Autre syntaxe du if.
+$a = 10;
+
+echo ($a == 10) ? 'Oui $a est égal à 10 <br>' : 'Non, $a est différent de 10<br>';
+// Dans cette syntaxe, le "?" remplace le if, et le ":" remplace le else.On affiche le premier string si $a est égal à 10, sinon on affiche le second.
+
+/*--------
+Différence entre  == et === 
+*/  
+$varA = 1; // integer
+$varB = '1'; // string
+
+if ($varA == $varB){ // comparaison en valeur uniquement.
+    echo '$varA est égal à $varB en valeur uniquement <br>';
+}
+
+if($varA === $varB) { // Comparaison en valeur et en type.
+    echo '$varA est égal à varB en valeur et en type <br>';
+}else {
+    echo '$varA est différent de $varB en type ou en valeur <br>';
+}
+
+// Pour mémoire : le simple "=" => pour affecter.
