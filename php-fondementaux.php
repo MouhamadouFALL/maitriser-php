@@ -87,7 +87,7 @@ $b = "everybody";
 echo $a . $b . '<br/>'; //On concatène les deux variables  et un string.Le point de concaténation peut être traduit par "suivi de.".
 
 #-----------------------------------------------------------------
-echo "<hr> Concaténation et aaffectation combinées avec .= <br>";
+echo "<hr> Concaténation et affectation combinées avec .= <br>";
 $messageError = "Erreur sur le pseudo <br>";
 $messageError .= "Erreur sur le mot de passe <br>";
 print $messageError;
@@ -300,4 +300,84 @@ if($langue =='français'){
     echo 'Hola !';
 }else {
     echo 'Hello !';
+}
+
+//--------------------------------------------
+echo "<h2> Fonctions prédéfinies </h2>";
+//--------------------------------------------
+
+/* Une fonction prédéfinie permet de réaliser un traitement spécifique prédéterminé dans le langage PHP. */
+
+//strpos()
+$email = "prenom@site.fr <br>";
+echo strpos($email, '@'); // indique la position de la chaine '@' dans la $email
+
+echo "<br>";
+
+//strlen()
+$phrase = 'mettez une phrase ici.';
+echo strlen($phrase); // affiche la taille d'une chaîne(compte le nombre d'octets, un caractère accentué comptant pour deux d'ou le résultat qui est égal à 32).
+
+echo '<br>';
+
+// substr() :
+$texte = 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor dignissimos earum at magni sequi, fugiat officia consequatur qui deleniti, doloribus sapiente totam odio temporibus id sint nemo esse, magnam repellendus.';
+echo substr($texte, 0, 20) ."<a href=''> lire la suite </a>"; // retourne une partie de la chaîne $texte en partant du point 0 et en prenant une longueur de 20 octets.
+
+echo '<br>';
+
+// Exemple : pour découper le 'fr' à la fin de $email#endregion
+$start = strpos($email, '.'); // on cherche la position du "." dans $email.
+echo substr($email, $start + 1); // et on affiche la partie de l'email après le "."jusqu'à la fin.
+
+//////////////////////////////////////////// Tableaux ///////////////////////////////////////////
+
+echo '<h2> Les Tableaux </h2>';
+
+$jours[0] = "Lundi";
+$jours[1] = "Mardi";
+$jours[2] = "Mercredi";
+$jours[3] = "Jeudi";
+$jours[4] = "Vendredi";
+$jours[5] = "Samedi";
+$jours[6] = "Dimanche";
+
+$mois = array("Janvier", "Fevrier", "Mars", "Avril", "Mai", "Juin", 
+                "Juillet", "Aout", "Septembre", "Octobre", "Novembre", "Decembre");
+
+$date = array($jours, $mois);
+
+// Parcourir un Tableau avec for 
+echo "<h3> afficher les jourrs de la semaine avec la boucle for </h3>";
+
+for ($i = 0; $i < count($jours); $i++) {
+    echo "Jour ".($i+1)." : ".$jours[$i]."<br>";
+}
+
+echo "<h3> afficher les mois de l'année avec la boucle while et foreach </h3>";
+
+$n=0;
+while($n < count($mois)) {
+    echo "mois ".($n+1)." : ".$mois[$n]."<br>";
+    $n++;
+}
+print "<br>*******************************************************************<br>";
+
+$i=1;
+foreach ($mois as $m) {
+    echo "mois ".$i." : ".$m."<br>";
+    $i++;
+}
+
+print "<h3> afficher une date le tableau multidimensionnel</h3>";
+
+echo "Date : ".$date[0][6]." 04 ".$date[1][03]." 2022";
+
+$scores = array("sen"=>4, "cov"=>7, "door"=>2, "ndanle"=>1, "pa"=>5);
+
+print "<h4> Affiche l'équipe et son score avec la boucle while </h4>";
+
+foreach ($scores as $score => $but) {
+    print $score." : ".$but."<br>";
+    $i++;
 }
