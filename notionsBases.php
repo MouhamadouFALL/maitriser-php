@@ -68,8 +68,22 @@ print "multiplication 5.5 * 2.5 = ".$n1 * $n2; print "<br>";
 print "soustraction 5.5 - 2.5 = ".$n2 - $n1; print "<br>";
 print "addition 5.5 + 2.5 = ".$n2 + $n1; print "<br>";
 print "division 5.5 / 2.5 = ".$n1 / $n2; print "<br>";
+print "<br>";
 
+# commentaire sur une ligne
+// commentaire sur une ligne
 
+/*
+commentaire sur plusieurs lignes
+*/
+
+# les fonctions de débogue
+$tab = [12, 3.5, "oui", true, [5, 6, 7]];
+echo "affichage with echo"; print "<br>"; // deboggage legere
+
+var_dump($array); print "<br>";
+var_export($Array); print "<br>";
+print_r($tab);
 
 
 
