@@ -116,6 +116,45 @@ $string_fruits = implode(" ", $array_fruits);
 var_dump($string_fruits);
 print "<br>";
 
+// formater une chaine : sprint()
+$name = "Jhon";
+$heure = 12;
+$format = "Hi, %s welcome it's %d h";
+print sprintf($format, $name, $heure); // insert dans la chaine la valeur des variables $name et $heure
+print "<br>";
 
+// fonction de remplacement
+
+$adresse = "colobane fann";
+print str_replace("fann", "Bel Aair", $adresse); // remplace fann par Bel Air dans la chaine
+print "<br>";
+
+// compter le nombre de caracteres dans une chaine : strlen()
+$string = "Colobane Fann";
+print strlen($string);
+print "<br>";
+
+// supprimer les espaces de debut de fin : trim()
+$string = "  je suis  ";
+echo trim($string);
+print "<br>";
+
+// recuperer un caractere ou un sous chaine dans une chaine : substr()
+$string = "nullement";
+echo substr($string, -3); //retourne une sous cahine en commencant à la fin 
+print "<br>";
+echo substr($string, 2);  //retourne une sous cahine en commencant au debut 
+print "<br>";
+echo substr($string, 0, -4);  //retourne une sous cahine
+print "<br>";
+
+// mettre en majuscule le premier caractere du mot
+$string = "nullement";
+print ucfirst($string);
+
+
+print "<br>";
+
+print "<br>";
 
 ?>
