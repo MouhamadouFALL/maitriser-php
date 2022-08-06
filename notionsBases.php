@@ -123,8 +123,7 @@ $format = "Hi, %s welcome it's %d h";
 print sprintf($format, $name, $heure); // insert dans la chaine la valeur des variables $name et $heure
 print "<br>";
 
-// fonction de remplacement
-
+// fonction de remplacement : str_replace()
 $adresse = "colobane fann";
 print str_replace("fann", "Bel Aair", $adresse); // remplace fann par Bel Air dans la chaine
 print "<br>";
@@ -148,10 +147,34 @@ print "<br>";
 echo substr($string, 0, -4);  //retourne une sous cahine
 print "<br>";
 
-// mettre en majuscule le premier caractere du mot
+// mettre en majuscule le premier caractere du mot : ucfirst()
 $string = "nullement";
 print ucfirst($string);
+print "<br>";
 
+
+// les fonctions de bases pour la manipulation des nombres
+// valeur absolue : abs()
+print abs(-5.5);
+print "<br>";
+// arondir par valeur inférieure : floor()
+print floor(5.98);
+print "<br>";
+// arondir par valeur supérieure : ceil()
+print ceil(5.98);
+print "<br>";
+// arondir : round()
+print round(5.54, 1);
+print "<br>";
+print round(5.57, 1);
+print "<br>";
+// le noombre PI : pi()
+print pi();
+print "<br>";
+
+
+
+print "<br>";
 
 print "<br>";
 
