@@ -64,10 +64,23 @@ print $n2 + $n1; print "<br>";
 print $n1 / $n2; print "<br>";
 
 // opérateur de concaténation
+print "---------------------------- opérateur de concaténation -------------------------------"; 
+print "$n1$n2"; print "<br>";
+print $n1.$n2; print "<br>";
 print "multiplication 5.5 * 2.5 = ".$n1 * $n2; print "<br>";
 print "soustraction 5.5 - 2.5 = ".$n2 - $n1; print "<br>";
 print "addition 5.5 + 2.5 = ".$n2 + $n1; print "<br>";
 print "division 5.5 / 2.5 = ".$n1 / $n2; print "<br>";
+
+// use HEREDOC
+$nom = "Naby";
+
+//echo <<<END 
+//    Hello $nom.
+//    Welocome to own site. 
+//\n
+//END;
+
 print "<br>";
 
 # commentaire sur une ligne
@@ -85,7 +98,23 @@ var_dump($array); print "<br>";
 var_export($Array); print "<br>";
 print_r($tab);
 
+print "<br>";
+print("-------------------------------------------------------------------");
+print "<br>";
 
+// fonctions sur les chaires
+
+$fruits = "mangue banane orange";
+
+$array_fruits = explode(" ", $fruits); // convertir ma chaine en array 
+var_dump($array_fruits);
+print "<br>";
+
+// inverssement 
+
+$string_fruits = implode(" ", $array_fruits);
+var_dump($string_fruits);
+print "<br>";
 
 
 
